@@ -19,4 +19,10 @@ Route::prefix('/auth')->group(function () {
 
 Route::middleware('auth')->prefix('/dashboard')->group(function () {
     Route::get('/profile', [UserProfileController::class, 'show'])->name('profile.show');
+    Route::get('/blog/create', function () {
+        return view('dashboard.create-blog');
+    });
+    Route::get('/my-blogs', function () {
+        return view('dashboard.my-blogs');
+    });
 });
