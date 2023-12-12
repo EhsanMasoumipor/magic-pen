@@ -8,5 +8,6 @@
 </head>
 <body class="bg-gray-800">
     @yield('content')
+    @include('sweetalert::alert')
 </body>
 </html>
