@@ -11,7 +11,7 @@
             email: <span class="text-purple-700 font-bold text-lg">{{ Auth::user()->email }}</span>
         </h2>
         <button class="bg-gradient-to-r from-purple-900 to-purple-600 hover:bg-gradient-to-r hover:from-purple-600 hover:to-purple-300 p-2 border w-40 hover:bg-purple-600 rounded-md border-purple-950 ml-5 mt-5">
-            <a href="#" class="text-black ">Update</a>
+            <a href="{{ route('profile.update.show') }}" class="text-black ">Update</a>
         </button>
     </div>
 </div>

@@ -18,7 +18,11 @@ Route::prefix('/auth')->group(function () {
 });
 
 Route::middleware('auth')->prefix('/dashboard')->group(function () {
-    Route::get('/profile', [UserProfileController::class, 'show'])->name('profile.show');
+    Route::prefix('/profile')->group(function () {
+    Route::get('/', [UserProfileController::class, 'show'])->name('profile.show');
+    Route::get('/update', [UserProfileController::class, 'show_update_profile'])->name('profile.update.show');
+    Route::put('/update', [UserProfileController::class, 'update'])->name('profile.update');
+    });
     Route::get('/blog/create', function () {
         return view('dashboard.create-blog');
     });
